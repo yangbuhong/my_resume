@@ -4,6 +4,11 @@ h1 {
 	font-size: 32px;
 	font-weight: bold;
 }
+a{
+	font-size:20px;
+	color:darkblue;
+	font-weight: bold;
+}
 /* 主页部分*/
 #home{
 	margin:0 auto;
