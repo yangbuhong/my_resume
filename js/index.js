@@ -110,7 +110,7 @@ $(function(){
 	});
 	$("#demo_list_toright").click(function(){
 		if(!$("#demo_detail_list").is(":animated")){
-			if(page==4){
+			if(page==5){
 				$("#demo_detail_list").animate({left:"-=50"},200,function(){
 					$(this).animate({left:"+=50"},200);
 				});
