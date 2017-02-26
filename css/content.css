@@ -1,3 +1,27 @@
+/*common style of page*/
+#home,
+#about,
+#skill,
+#demo,
+#call_me,
+{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	background: url(../images/page1.png) no-repeat center top;
+	background-size: 100% 100%;
+}
+#home_content,
+#about_content,
+#skill_content,
+#call_me_content,
+#demo_content,
+ {
+	margin: 0 auto;
+	width: 1000px;
+	height: auto;
+}
 h1 {
 	width: 150px;
 	margin: 0 auto;
@@ -9,17 +33,57 @@ a{
 	color:darkblue;
 	font-weight: bold;
 }
+.title {
+	text-align: center;
+	margin-top: 100px;
+	width: 100%;
+	height: 60px;
+}
+.title p{
+	text-align: center;
+	width: 100%;
+	margin: 20px auto;
+	font-size: 15px;
+	font-weight:bold;
+}
+@media screen and (max-width:1366px){
+body {
+	font-size: 13px;
+}
+h1 {
+	font-size: 24px;
+}
+
+.title {
+	margin-top: 60px;
+}
+}
 /* 主页部分*/
 #home{
-	margin:0 auto;
-	width: 800;
-	position: relative;
+	display: none;
+}
+@-webkit-keyframes zoom {
+	0%{
+		background-size: 130% 130%;	
+	}
+	100%{
+		background-size: 100% 100%;
+	}
+}
+@keyframes zoom {
+	0%{
+		background-size: 130% 130%;	
+	}
+	100%{
+		background-size: 100% 100%;
+	}
 }
 .head-image{
-	margin:0 auto;
+	margin: 0 auto;
 	position: relative;
-	width: 200px;
-	height: 200px;
+	width: 153.2px;
+	height: 153.2px;
+	cursor: pointer;
 }
 .head-image img{
 	width: 150px;
@@ -63,13 +127,18 @@ a{
 }
 
 #home_info_box{
-	font-size:18px ;
+   border-top: 2px solid #ccc;
+	width: 0;
+	margin: 15px auto;
 	
 }
 .home_info2,.home_info3,.home_info4,.home_info5{
-text-align: center;
-margin-top: 20px;
+	margin: 15px auto;
+	display: none;
+	width: 800px;
+	text-align: center;
 }
+/*关于我*/
 #about_content {
 	height: 510px;
 }
@@ -81,7 +150,6 @@ margin-top: 20px;
 	border-radius: 30px;
 	background: #4E4E4E;	
 }
-/*关于我*/
 .about_list {
 	float: left;
 	margin-left: 120px;
@@ -222,51 +290,46 @@ margin-top: 20px;
 		opacity: 0;
 	}
 }
+@media screen and (max-width:1366px){
+#about_list_content{
+	margin: 40px auto;
+	width: 700px;
+}
 #about_list1 {
 	margin-left: 76px;
 }
 .about_list {
 	margin-left: 76px;
 }
+#about_list_content {
+	padding: 15px 0;
+}
+}
 /*专业技能*/
-#skill_content {
-	height: 510px;
-}
-.title p{
-	text-align: center;
-	width: 100%;
-	margin: 20px auto;
-	font-size: 15px;
-	font-weight:bold;
-}
 #skill_list_content{
-	margin: 0 auto;
-	width: 800px;
+    margin: 20px auto;
+	width: 100%;
+	font-size: 16px;
 	height: 400px;
-	padding: 20px 0;
-	background-color:rgba(0,0,0,0.4);
-	border-radius:20px;
 }
 .skill_list{
-	margin:auto 0px;
-	float: left;
-	width: 200px;
-	height: 100px;
+    float: left;
+	margin: 0 8%;
+	position: relative;
+	height: 400px;
+	visibility: hidden;
 	
 }
 .skill_icon {
-	float: left;
     cursor: pointer;
     background-size: 100%;
-	width: 80px;
-	height: 80px;
+	width: 90px;
+	height: 100px;
 	text-align: center;
-	margin: 20px 50px;
-	margin-left: 50px;
+	margin: 30px auto;
     webkit-transform: scale(1.0);
     transform: scale(1.0);
     transition : transform .25s;
-    border-radius: 40px;
 }
 .skill_icon:hover{
     webkit-transform: scale(1.2);
@@ -286,32 +349,28 @@ margin-top: 20px;
     background: url(../images/office.png) no-repeat ;
 }
 .skill_name {
-	margin: 30px 40px;
-	float: left;
-	text-align: center;
-	width:100px;
+   text-align: center;
+	width: 100%;
 	position: relative;
-	font-weight: 800;
-	color: #FFFFFF;
 }
 .skill_flag {
-	position: relative;
-    margin-left: 40px;
-    margin-top: 150px;
-	width: 100px;
-	height: 100px;
+		margin: 20px auto;
+	width: 20px;
+	height: 20px;
 	background: url(../images/flag.png);
 	-webkit-transition-duration: 1s;
 	transition-duration: 1s;
+	
 }
 .skill_flag_scale {
 	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 .skill_int {
-	position: relative;
-	margin: auto 0;
-	width: 200px;
+position: absolute;
+	top: 250px;
+	width: 320px;
+	left: -136px;
 	font-size: 14px;
 	line-height: 20px;
 	display: none;
@@ -322,7 +381,7 @@ margin-top: 20px;
 
 }
 .skill_int li {
-	font-size: 15px;
+	font-size: 12px;
 	padding-left: 15px;
 }
 @-webkit-keyframes skill_scale {
@@ -374,14 +433,15 @@ margin-top: 20px;
 	animation: skill_scale 1s;
 	visibility: visible;
 }
-/*实践经历*/
+/*作品展示*/
 #demo_list_slider {
-	position: relative;
-	width: 1000px;
+width: 1000px;
 	overflow: hidden;
-	height: 500px;
-	margin: 0 auto;
+	margin: 0 auto;	
 	
+}
+#demo_detail_list{
+	position: relative;
 }
 #demo_list_slider:before {
 	content: "";
@@ -412,11 +472,7 @@ margin-top: 20px;
 	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1) inset;
 }
 .demo_detail_img{
-	float: left;
-	position: absolute;
-	width: 500px;
-	height:300px ;
-	margin-left: 100px;
+	width: 500px;	
 	}
 .demo_detail_img img{
     width: 80%;
@@ -462,16 +518,8 @@ margin-top: 20px;
 #demo_list_to {
 	display: none;
 }
-.demo_list_time {
-	font-size: 12px !important;
-	margin-top: -20px;
-	color: #333;
-}
-.demo_list_time:before{
-    position:static !important;
-}
-
-#demo_list_toleft, #demo_list_toright {
+#demo_list_toleft,
+#demo_list_toright {
 	position: absolute;
 	width: 60px;
 	height: 60px;
@@ -479,12 +527,11 @@ margin-top: 20px;
 	z-index: 100;
 	cursor: pointer;
 }
-
 #demo_list_toleft {
 	left: 2%;
 }
 #demo_list_toright {
-	right: 4%;
+	right: 2%;
 }
 #call_me_content_detail{
 	position: relative;
